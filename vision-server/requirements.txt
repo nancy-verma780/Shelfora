@@ -1,0 +1,9 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pyyaml>=6
+numpy>=1.26
+opencv-python-headless>=4.9
+# Training and live cameras (not needed for demo mode)
+ultralytics>=8.3
+roboflow>=1.1
+kaggle>=1.6

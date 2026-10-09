@@ -1,0 +1,16 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+vision-server/datasets/
+vision-server/runs/
+vision-server/data/
+*.zip
+*.tar.gz
+*.pt
+!vision-server/models/*.pt
+.env
+kaggle.json
+access_token

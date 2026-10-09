@@ -1,0 +1,103 @@
+{
+ "trainedAt": "2026-10-08",
+ "model": "YOLO11n (2.6M parameters), fine-tuned from COCO weights",
+ "dataset": {
+  "name": "Grocery Dataset (Varol & Kuzu, 2015)",
+  "url": "https://github.com/gulvarol/grocerydataset",
+  "images": 354,
+  "train": 301,
+  "val": 53,
+  "boxes": 13184,
+  "licence": "Research use only, not for commercial use"
+ },
+ "epochs": 12,
+ "imgsz": 640,
+ "device": "CPU (1 core)",
+ "metrics": {
+  "map50": 0.994,
+  "map": 0.743,
+  "precision": 0.996,
+  "recall": 0.998
+ },
+ "baseline": {
+  "map50": 0.417,
+  "map": 0.221,
+  "precision": 0.581,
+  "recall": 0.306
+ },
+ "inferenceMs": 127,
+ "curve": [
+  {
+   "epoch": 1,
+   "map50": 0.688,
+   "map": 0.433,
+   "loss": 1.232
+  },
+  {
+   "epoch": 2,
+   "map50": 0.977,
+   "map": 0.631,
+   "loss": 1.125
+  },
+  {
+   "epoch": 3,
+   "map50": 0.993,
+   "map": 0.635,
+   "loss": 1.067
+  },
+  {
+   "epoch": 4,
+   "map50": 0.99,
+   "map": 0.705,
+   "loss": 1.097
+  },
+  {
+   "epoch": 5,
+   "map50": 0.994,
+   "map": 0.683,
+   "loss": 1.041
+  },
+  {
+   "epoch": 6,
+   "map50": 0.995,
+   "map": 0.719,
+   "loss": 1.06
+  },
+  {
+   "epoch": 7,
+   "map50": 0.993,
+   "map": 0.71,
+   "loss": 0.992
+  },
+  {
+   "epoch": 8,
+   "map50": 0.994,
+   "map": 0.73,
+   "loss": 0.991
+  },
+  {
+   "epoch": 9,
+   "map50": 0.994,
+   "map": 0.743,
+   "loss": 0.986
+  },
+  {
+   "epoch": 10,
+   "map50": 0.994,
+   "map": 0.73,
+   "loss": 0.973
+  },
+  {
+   "epoch": 11,
+   "map50": 0.995,
+   "map": 0.721,
+   "loss": 0.956
+  },
+  {
+   "epoch": 12,
+   "map50": 0.994,
+   "map": 0.72,
+   "loss": 0.961
+  }
+ ]
+}
