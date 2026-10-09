@@ -1,6 +1,7 @@
 ﻿# Shelfora
 
 **Live demo:** https://shelfora-peach.vercel.app
+**Demo video:** [watch the 30-second walkthrough](docs/shelfora-linkedin-4x5.mp4)
 
 
 **See the shelf. Know what to refill.**
