@@ -1,4 +1,7 @@
-# Shelfora
+﻿# Shelfora
+
+**Live demo:** https://shelfora-peach.vercel.app
+
 
 **See the shelf. Know what to refill.**
 
@@ -7,7 +10,7 @@ products in each shelf zone. When customers take items, the count drops, fast se
 high demand, and an empty high-demand shelf raises an urgent refill alert for the store manager.
 
 ```
-CCTV camera ─▶ YOLO detection ─▶ products per shelf zone ─▶ stock + sales speed ─▶ refill priority ─▶ dashboard
+CCTV camera â”€â–¶ YOLO detection â”€â–¶ products per shelf zone â”€â–¶ stock + sales speed â”€â–¶ refill priority â”€â–¶ dashboard
 ```
 
 ## What's inside
@@ -25,7 +28,7 @@ CCTV camera ─▶ YOLO detection ─▶ products per shelf zone ─▶ stock + 
 - **Overview:** what needs attention right now, shelf health, a store map, a guided refill round
 - **Live Monitor:** camera views with detection boxes on every product
 - **Refill Queue:** priority = 50% stock level + 30% selling speed + 20% time until empty
-- **Fast movers, shelf health, analytics, alerts**, light and dark mode, ⌘K search
+- **Fast movers, shelf health, analytics, alerts**, light and dark mode, âŒ˜K search
 - **High-demand detection:** items taken quickly from one zone are flagged; empty + high demand = urgent refill
 
 ## Run it
@@ -44,7 +47,7 @@ cd vision-server
 pip install fastapi "uvicorn[standard]" pyyaml numpy opencv-python-headless
 python -m uvicorn shelfora.api:app --port 8000
 ```
-Then in the dashboard: Settings → Connect your store → `http://localhost:8000`.
+Then in the dashboard: Settings â†’ Connect your store â†’ `http://localhost:8000`.
 With no camera configured it runs a simulated shop. For real cameras and training, see
 `SETUP_GUIDE.md` and `vision-server/TRAINING.md`.
 
