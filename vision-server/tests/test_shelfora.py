@@ -77,8 +77,15 @@ def test_api_demo_end_to_end(tmp_path, monkeypatch):
     assert {p["id"]: p for p in c.get("/products").json()}["bev-coke-500"]["estimatedStock"] == 48
     r = c.post("/sales", json=[{"product_id": "bev-coke-500", "qty": 3}, {"product_id": "nope"}]).json()
     assert r["accepted"] == 1 and r["rejected"] == 1
-    time.sleep(3.5)
-    assert c.get("/cameras/cam-01/frame.jpg").headers["content-type"] == "image/jpeg"
+    # the first camera picture arrives after the first scan (every 3 s); slower computers need a little longer,
+    # so keep checking for up to 15 s instead of guessing one fixed wait
+    deadline = time.time() + 15
+    while True:
+        frame = c.get("/cameras/cam-01/frame.jpg")
+        if frame.status_code == 200 or time.time() > deadline:
+            break
+        time.sleep(0.5)
+    assert frame.headers["content-type"] == "image/jpeg"
     assert any(e["kind"] == "refilled" for e in c.get("/events").json())
 
 
