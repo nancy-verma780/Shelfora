@@ -31,7 +31,7 @@ export function CameraCard({
           </div>
           {loading && (
             <div className="absolute inset-0 grid place-items-center">
-              <span className="inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-xs text-white/85">
+              <span className="inline-flex items-center gap-2 rounded-md bg-black/55 px-3 py-1.5 text-xs text-white/85">
                 <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/30 border-t-white/80" /> Switching to {camera.label}…
               </span>
             </div>

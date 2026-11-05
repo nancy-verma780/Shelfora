@@ -126,4 +126,6 @@ export type PageId =
   | "analytics"
   | "model"
   | "alerts"
-  | "settings";
+  | "settings"
+  | "terms"
+  | "privacy";

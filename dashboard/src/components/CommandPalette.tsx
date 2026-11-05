@@ -50,7 +50,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
             onKeyDown={(e) => {
               if (e.key === "ArrowDown") { e.preventDefault(); setI((x) => Math.min(results.length - 1, x + 1)); }
               if (e.key === "ArrowUp") { e.preventDefault(); setI((x) => Math.max(0, x - 1)); }
-              if (e.key === "Enter" && results[i]) choose(results[i]);
+              if (e.key === "Enter" && results[i]) { e.preventDefault(); const r = results[i]; setTimeout(() => choose(r), 0); }
               if (e.key === "Escape") onClose();
             }}
             placeholder="Find a product, rack or page…"

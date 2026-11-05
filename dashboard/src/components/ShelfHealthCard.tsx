@@ -38,7 +38,7 @@ export function ShelfHealthCard({ section, camera, products }: { section: Sectio
             <p className="text-[13px] text-ink3">{camera.label} · Last scan {ago(lastScan).toLowerCase()}</p>
           </div>
         </div>
-        <span className={cx("rounded-full px-2.5 py-0.5 text-xs font-semibold", z.health >= 85 ? "bg-oksoft text-ok" : z.health >= 75 ? "bg-lowsoft text-low" : "bg-emptysoft text-empty")}>{tone.label}</span>
+        <span className={cx("rounded-md px-2.5 py-0.5 text-xs font-semibold", z.health >= 85 ? "bg-oksoft text-ok" : z.health >= 75 ? "bg-lowsoft text-low" : "bg-emptysoft text-empty")}>{tone.label}</span>
       </div>
 
       <div className="mt-5 flex items-baseline gap-2">

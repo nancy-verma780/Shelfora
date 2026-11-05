@@ -61,7 +61,7 @@ body {
 *:focus-visible { outline: 2px solid rgb(var(--teal)); outline-offset: 2px; border-radius: 6px; }
 button { -webkit-tap-highlight-color: transparent; }
 
-/* Motion — each answers something the person did, or marks something live. */
+/* Motion: each answers something the person did, or marks something live. */
 @keyframes page-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .page-in { animation: page-in 0.32s cubic-bezier(.2,.7,.2,1) both; }
 

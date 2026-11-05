@@ -42,7 +42,7 @@ export function SidebarContent({ onNavigate, onClose }: { onNavigate?: () => voi
         )}
       </div>
       <nav className="relative mt-2 flex-1 space-y-0.5 overflow-y-auto px-3" aria-label="Main">
-        <span aria-hidden className="slide-ind pointer-events-none absolute left-3 right-3 top-0 h-10 rounded-xl bg-tealsoft" style={{ transform: `translateY(${Math.max(0, NAV.findIndex((n) => n.id === page)) * 42}px)` }} />
+        <span aria-hidden className="slide-ind pointer-events-none absolute left-3 right-3 top-0 h-10 rounded-xl bg-tealsoft" style={{ transform: `translateY(${Math.max(0, NAV.findIndex((n) => n.id === page)) * 42}px)`, opacity: NAV.some((n) => n.id === page) ? 1 : 0 }} />
         {NAV.map(({ id, label, icon: Icon }) => {
           const active = page === id;
           const c = counts[id];
@@ -59,7 +59,7 @@ export function SidebarContent({ onNavigate, onClose }: { onNavigate?: () => voi
               <Icon className={cx("h-[18px] w-[18px] transition-[color,transform] duration-300", active ? "scale-110 text-teal" : "text-ink3 group-hover:text-ink2")} strokeWidth={2} />
               <span className="flex-1 text-left">{label}</span>
               {c && c.n > 0 && (
-                <span className={cx("tnum min-w-[22px] rounded-full px-1.5 py-px text-center text-[11px] font-semibold", c.tone === "red" ? "bg-empty text-white dark:text-[rgb(var(--paper))]" : "bg-sunken text-ink2")}>
+                <span className={cx("tnum min-w-[22px] rounded-md px-1.5 py-px text-center text-[11px] font-semibold", c.tone === "red" ? "bg-empty text-white dark:text-[rgb(var(--paper))]" : "bg-sunken text-ink2")}>
                   {c.n}
                 </span>
               )}
@@ -129,7 +129,7 @@ export function MobileTabBar({ onMore }: { onMore: () => void }) {
             <button key={id} onClick={() => go(id)} className={cx("relative flex h-14 flex-col items-center justify-center gap-0.5 text-[11px] font-medium", active ? "text-teal" : "text-ink3")}>
               <Icon className="h-5 w-5" />
               {short[id]}
-              {c && c.n > 0 && <span className="tnum absolute right-[22%] top-1.5 rounded-full bg-empty px-1.5 text-[10px] font-semibold text-white dark:text-[rgb(var(--paper))]">{c.n}</span>}
+              {c && c.n > 0 && <span className="tnum absolute right-[22%] top-1.5 rounded-md bg-empty px-1.5 text-[10px] font-semibold text-white dark:text-[rgb(var(--paper))]">{c.n}</span>}
             </button>
           );
         })}

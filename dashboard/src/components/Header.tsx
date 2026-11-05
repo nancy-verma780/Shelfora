@@ -132,7 +132,7 @@ function ConnectionPill() {
   const { connection, go } = useStore();
   const live = connection.status === "live";
   return (
-    <button onClick={() => go("settings")} className={cx("hidden items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium md:inline-flex", live ? "bg-oksoft text-ok" : connection.status === "error" ? "bg-lowsoft text-low" : "bg-sunken text-ink2")}>
+    <button onClick={() => go("settings")} className={cx("hidden items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium md:inline-flex", live ? "bg-oksoft text-ok" : connection.status === "error" ? "bg-lowsoft text-low" : "bg-sunken text-ink2")}>
       <span className={cx("h-1.5 w-1.5 rounded-full", live ? "live-dot bg-ok" : connection.status === "error" ? "bg-low" : "bg-ink3")} />
       {live ? (connection.health?.mode === "demo" ? "Server connected (demo store)" : "Live from store cameras") : connection.status === "error" ? "Store server unreachable" : "Sample data"}
     </button>

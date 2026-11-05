@@ -1,7 +1,7 @@
 import type { Category, PackShape, ProductRecord, SectionId } from "../types";
 
 /**
- * Mock shelf snapshot for DGI Retail Store — 95 tracked products across 4 camera zones.
+ * Mock shelf snapshot for DGI Retail Store: 95 tracked products across 4 camera zones.
  *
  * Only raw observations live here (what a camera counts + what the POS reports).
  * Status, priority, velocity labels, alerts and KPIs are all *derived* in lib/logic.ts,

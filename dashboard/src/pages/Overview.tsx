@@ -44,8 +44,6 @@ export function Overview() {
   return (
     <div>
       <section className="relative overflow-hidden rounded-3xl border border-line bg-surface p-5 shadow-card sm:p-7">
-        <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
-        <div aria-hidden className="pointer-events-none absolute -bottom-32 left-1/3 h-64 w-64 rounded-full bg-fast/5 blur-3xl" />
         <div className="relative flex flex-col gap-6 md:flex-row md:items-center">
           <HealthRing value={kpis.shelfHealth} />
           <div className="min-w-0 flex-1">
@@ -81,7 +79,7 @@ export function Overview() {
           { icon: ListChecks, text: kpis.urgent ? `${kpis.urgent} to refill right now` : "Nothing urgent", page: "refill" as const, strong: kpis.urgent > 0 },
         ].map((s, i, arr) => (
           <li key={s.text} className="flex shrink-0 items-center gap-2">
-            <button onClick={() => go(s.page)} className={cx("inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 font-medium transition-colors", s.strong ? "border-empty/30 bg-emptysoft text-empty hover:border-empty/60" : "border-line bg-surface text-ink2 hover:text-ink")}>
+            <button onClick={() => go(s.page)} className={cx("inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 font-medium transition-colors", s.strong ? "border-empty/30 bg-emptysoft text-empty hover:border-empty/60" : "border-line bg-surface text-ink2 hover:text-ink")}>
               <s.icon className="h-3.5 w-3.5" /> {s.text}
             </button>
             {i < arr.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-ink3" />}

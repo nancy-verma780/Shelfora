@@ -11,7 +11,7 @@ import { StatusBadge } from "../components/StatusBadge";
 import { Card, EmptyState, PageHeader, cx } from "../components/ui";
 import type { Product } from "../types";
 
-const LINE_COLORS = ["rgb(var(--empty))", "rgb(var(--fast))", "rgb(var(--teal))", "rgb(var(--low))", "#8b5cf6"];
+const LINE_COLORS = ["rgb(var(--empty))", "rgb(var(--fast))", "rgb(var(--teal))", "rgb(var(--low))", "rgb(var(--ink2))"];
 
 function demandLabel(p: Product) {
   if (p.stockStatus === "out_of_stock") return { text: "Refill urgently", cls: "bg-emptysoft text-empty" };
@@ -88,14 +88,14 @@ export function FastMovers() {
             })}
           </div>
 
-          <ChartCard className="mt-6" title="Sales velocity — Last 7 days" subtitle="Daily sales compared with each product’s normal day (1.0× is normal).">
+          <ChartCard className="mt-6" title="Sales velocity, last 7 days" subtitle="Daily sales compared with each product’s normal day (1.0× is normal).">
             <div className="mb-4 flex flex-wrap gap-2">
               {fast.map((p) => {
                 const on = picked.includes(p.id);
                 const color = LINE_COLORS[picked.indexOf(p.id) % LINE_COLORS.length];
                 return (
                   <button key={p.id} onClick={() => toggle(p.id)} aria-pressed={on}
-                    className={cx("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium transition-colors", on ? "border-transparent bg-sunken text-ink" : "border-line text-ink3 hover:text-ink2")}>
+                    className={cx("inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium transition-colors", on ? "border-transparent bg-sunken text-ink" : "border-line text-ink3 hover:text-ink2")}>
                     <span className="h-2 w-2 rounded-full" style={{ background: on ? color : "rgb(var(--line))" }} />
                     {p.name.replace(/\s\d.*$/, "")}
                   </button>

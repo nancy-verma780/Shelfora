@@ -33,7 +33,7 @@ export function Analytics() {
 
   return (
     <div>
-      <PageHeader title="Analytics" subtitle="How your shelves have been doing, and whether refills are getting faster.">
+      <PageHeader title="Analytics" subtitle="How the demo store’s shelves have been doing. All figures on this page are sample data.">
         <Segmented label="Date range" value={range} onChange={setRange} options={[{ value: "7", label: "Last 7 days" }, { value: "14", label: "14 days" }, { value: "30", label: "30 days" }]} />
       </PageHeader>
 

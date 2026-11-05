@@ -11,7 +11,7 @@ const STATUS: Record<StockStatus, { label: string; cls: string; dot: string }> =
 export function StatusBadge({ status, className }: { status: StockStatus; className?: string }) {
   const s = STATUS[status];
   return (
-    <span className={cx("inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors duration-300", s.cls, className)}>
+    <span className={cx("inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-0.5 text-xs font-semibold transition-colors duration-300", s.cls, className)}>
       <span className={cx("h-1.5 w-1.5 rounded-full", s.dot)} />
       {s.label}
     </span>

@@ -41,7 +41,7 @@ export function LiveMonitor() {
   return (
     <div>
       <PageHeader title="Live Monitor" subtitle="Monitor existing store cameras and shelf conditions.">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-xs text-ink2">
+        <span className="inline-flex items-center gap-1.5 rounded-md border border-line bg-surface px-3 py-1.5 text-xs text-ink2">
           <Info className="h-3.5 w-3.5 text-fast" /> {live ? (connection.health?.mode === "demo" ? "Server connected: simulated camera, real detection pipeline" : "Live from your store cameras") : "Sample data: footage and detections are simulated"}
         </span>
       </PageHeader>

@@ -13,7 +13,7 @@ import { Button, cx } from "./ui";
 
 /**
  * Guided refill round: walks the manager (or a staff member with a phone) through the
- * urgent shelves one at a time — where it is, what the camera sees, then "Done".
+ * urgent shelves one at a time: where it is, what the camera sees, then "Done".
  */
 export function RefillRound({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { products, byId, refill, kpis } = useStore();

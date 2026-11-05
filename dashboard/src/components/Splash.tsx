@@ -11,9 +11,9 @@ export function Splash() {
       <StorefrontArt rows={[pick("B3"), pick("A2"), pick("C1"), pick("P1")]} animate className="float-in w-full max-w-[420px]" />
       <div className="mt-6 flex items-center gap-2">
         <LogoMark size={26} />
-        <p className="font-display text-lg font-bold">Opening your store…</p>
+        <p className="font-display text-lg font-bold">Opening the demo store…</p>
       </div>
-      <p className="mt-1 text-sm text-ink3">Reading the latest view from 4 shelf cameras</p>
+      <p className="mt-1 text-sm text-ink3">Loading sample shelf data</p>
     </div>
   );
 }

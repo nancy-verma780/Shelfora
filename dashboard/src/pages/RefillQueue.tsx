@@ -32,7 +32,7 @@ export function RefillQueuePage() {
   return (
     <div>
       <PageHeader title="Refill Queue" subtitle="Prioritized by stock level and sales velocity.">
-        <span className="rounded-full border border-line bg-surface px-3 py-1.5 text-xs text-ink2">
+        <span className="rounded-md border border-line bg-surface px-3 py-1.5 text-xs text-ink2">
           Priority = {PRIORITY_WEIGHTS.stockRisk * 100}% stock level + {PRIORITY_WEIGHTS.velocity * 100}% selling speed + {PRIORITY_WEIGHTS.timeToEmpty * 100}% time to empty
         </span>
       </PageHeader>

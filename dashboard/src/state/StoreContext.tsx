@@ -166,7 +166,12 @@ const StoreCtx = createContext<Ctx | null>(null);
 
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [s, dispatch] = useReducer(reducer, Date.now(), init);
-  const [page, setPage] = useState<PageId>("overview");
+  const [page, setPage] = useState<PageId>(() => pageFromPath(window.location.pathname));
+  useEffect(() => {
+    const onPop = () => setPage(pageFromPath(window.location.pathname));
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
   const [drawerId, setDrawerId] = useState<string | null>(null);
   const [cameraId, setCameraId] = useState("cam-01");
   const [focusId, setFocusId] = useState<string | null>(null);
@@ -291,6 +296,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     go: (p, opts) => {
       const apply = () => {
         setPage(p);
+        const path = PATHS[p] ?? "/";
+        if (window.location.pathname !== path) window.history.pushState({}, "", path);
         if (opts?.camera) setCameraId(opts.camera);
         setFocusId(opts?.focus ?? null);
         setDrawerId(null);
@@ -347,6 +354,14 @@ function describeFailure(e: unknown): string {
   if (/abort/i.test(msg)) return "The server didn't answer within 6 seconds. Check the address and that it's running.";
   if (/^\d{3}/.test(msg)) return `The server answered with an error (${msg}). Is this a Shelfora Vision server?`;
   return "Couldn't reach that address. Check it's running and allows this page (CORS). The hosted preview can't call other servers, so connect from your own copy of the dashboard.";
+}
+
+const PATHS: Partial<Record<PageId, string>> = { terms: "/terms", privacy: "/privacy" };
+function pageFromPath(path: string): PageId {
+  const clean = path.replace(/\/+$/, "");
+  if (clean === "/terms") return "terms";
+  if (clean === "/privacy") return "privacy";
+  return "overview";
 }
 
 const emptyKpis: Kpis = { total: 0, shelfHealth: 0, outOfStock: 0, outOfStockUrgent: 0, lowStock: 0, lowStockToday: 0, fastMovers: 0, urgent: 0, fillRate: 0 };

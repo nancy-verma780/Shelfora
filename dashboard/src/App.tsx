@@ -18,6 +18,8 @@ import { Analytics } from "./pages/Analytics";
 import { Alerts } from "./pages/Alerts";
 import { Settings } from "./pages/Settings";
 import { VisionModel } from "./pages/VisionModel";
+import { Privacy, Terms } from "./pages/Legal";
+import { DemoNotice, Footer } from "./components/Footer";
 import type { PageId } from "./types";
 
 const PAGES: Record<PageId, () => JSX.Element> = {
@@ -31,6 +33,8 @@ const PAGES: Record<PageId, () => JSX.Element> = {
   alerts: Alerts,
   model: VisionModel,
   settings: Settings,
+  terms: Terms,
+  privacy: Privacy,
 };
 
 function Shell() {
@@ -54,10 +58,11 @@ function Shell() {
         <Header onMenu={() => setMenu(true)} onSearch={() => setSearch(true)} />
         <main className="mx-auto max-w-[1400px] px-4 pb-24 pt-6 sm:px-6 sm:pb-12 lg:px-8 lg:pt-8">
           {loaded ? (
-            <div key={page + (focusId ?? "")} className={"vt-page " + ("startViewTransition" in document ? "" : "page-in")}><Page /></div>
+            <div key={page + (focusId ?? "")} className={"vt-page " + ("startViewTransition" in document ? "" : "page-in")}><DemoNotice /><Page /></div>
           ) : (
             <Splash />
           )}
+          <Footer />
         </main>
       </div>
       <MobileTabBar onMore={() => setMenu(true)} />
