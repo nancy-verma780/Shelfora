@@ -39,3 +39,30 @@ flowchart LR
     A["📷 Existing CCTV"] --> B["🤖 YOLO detection"]
     B --> C["📦 Products per shelf zone"]
     C
+
+
+
+## 👨‍💻 Project Team
+
+<div align="center">
+
+### Nancy Verma
+
+B.Tech – Computer Science and Engineering (AI & ML)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nancy%20Verma-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/nancy-verma780/)
+
+<br/>
+
+
+### Bhaskar Pandey
+B.Tech – Computer Science and Engineering (AI & ML)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Bhaskar%20Pandey-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/bhaskar-pandey-71ab93376/)
+
+
+</div>
+
+---
+
+<div align="center">
