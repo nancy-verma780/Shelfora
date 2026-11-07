@@ -24,7 +24,7 @@ and tells the store manager what to refill first, before customers walk out empt
 
 </div>
 
----
+
 
 ## 🛒 The problem
 
@@ -41,7 +41,7 @@ flowchart LR
     C
 
 
-
+```
 ## 👨‍💻 Project Team
 
 <div align="center">
@@ -63,6 +63,5 @@ B.Tech – Computer Science and Engineering (AI & ML)
 
 </div>
 
----
 
 <div align="center">
